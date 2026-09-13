@@ -26,8 +26,8 @@ body{
     align-items:center;
     justify-content:center;
     overflow:hidden;
-    background-image:url('whitefire.gif');
-    background-repeat:no-repeat;
+    background-image:url('./whitefire.gif');
+    background-repeat:repeat;
     background-position:center;
     background-size:cover;
     background-attachment:fixed;
