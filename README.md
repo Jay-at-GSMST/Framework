@@ -1,2 +1,1 @@
-# Framework
-A free starter animation program!
+Hi again! I was browsing through some of my old coding projects and saw I had tried to make a drawing app but quit halfway. i moved on and went to draw because I was bored, and my app subscription ran out, and I though to myself,"this would be a GREAT chance to finish this project!" So I started from the top and made the base for an animation app! I'll gladly take input on what feature people think should be added, because I want this to be used by anybody who don't want to pay for animation software!!!
