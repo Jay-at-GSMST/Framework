@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>FRAMEWORK</title>
+    <link rel="stylesheet" href="design.css">
+</head>
+
+<body>
+
+<section id="startupScreen" class="screen">
+    <div class="framework"></div>
+
+    <div class="startupContent">
+        <div class="logoMark" id="logoMark">*</div>
+        <h1 id="logoText">FRAMEWORK</h1>
+        <p id="tagline">2D ANIMATION</p>
+
+        <div class="startupButtons">
+            <button class="mainButton" onclick="newAnimation()">
+                <span>+</span>New Animation
+            </button>
+
+            <button class="secondaryButton" onclick="openProject()">
+                <span>→</span>Open Project
+            </button>
+
+            <button class="secondaryButton" onclick="importArtwork()">
+                <span>[]</span>Import Artwork
+            </button>
+        </div>
+
+        <p class="version">FRAMEWORK - VERSION 1.0</p>
+    </div>
+</section>
+
+
+<section id="studio" class="screen hidden">
+
+    <header class="topBar">
+        <div class="brand">
+            <div class="miniLogo">*</div>
+            <span>FRAMEWORK</span>
+        </div>
+
+        <nav class="menu">
+            <button>FILE</button>
+            <button>EDIT</button>
+            <button>VIEW</button>
+            <button>ANIMATION</button>
+        </nav>
+
+        <div class="saveStatus">
+            <span class="statusDot"></span>Saved
+        </div>
+    </header>
+
+
+    <main class="workspace">
+
+        <aside class="toolbar">
+            <button class="tool active" title="Brush">🖌️</button>
+            <button class="tool" title="Pencil">✏️</button>
+            <button class="tool" title="Eraser">🔳</button>
+
+            <div class="toolDivider"></div>
+
+            <button class="tool" title="Fill">🫟</button>
+            <button class="tool" title="Lasso">⭕</button>
+            <button class="tool" title="Move">⬆️⬇️</button>
+
+            <div class="toolDivider"></div>
+
+            <button class="tool" title="Zoom">🔬</button>
+            <button class="tool" title="Hand">🖐️</button>
+        </aside>
+
+
+        <section class="canvasArea">
+
+            <div class="canvasHeader">
+                <div>
+                    <strong>New Animation</strong>
+                    <small>1920 x 1080</small>
+                </div>
+
+                <div class="canvasControls">
+                    <button>−</button>
+                    <span>100%</span>
+                    <button>+</button>
+                </div>
+            </div>
+
+            <div class="canvasWrapper">
+                <canvas id="animationCanvas" width="960" height="540"></canvas>
+            </div>
+
+        </section>
+
+
+        <aside class="properties">
+
+            <div class="panel">
+                <div class="panelTitle">BRUSH</div>
+
+                <label>
+                    <span>Size</span>
+                    <span id="sizeValue">12px</span>
+                </label>
+
+                <input type="range" id="brushSize" min="1" max="100" value="12">
+
+                <label>
+                    <span>Opacity</span>
+                    <span id="opacityValue">100%</span>
+                </label>
+
+                <input type="range" id="brushOpacity" min="1" max="100" value="100">
+            </div>
+
+
+            <div class="panel">
+                <div class="panelTitle">COLOR</div>
+
+                <div class="colorPreview" id="colorPreview"></div>
+
+                <input type="color" id="colorPicker" value="#ffffff">
+
+                <div class="colorPalette">
+                    <button style="background:#ffffff"></button>
+                    <button style="background:#000000"></button>
+                    <button style="background:#ff4d6d"></button>
+                    <button style="background:#ffca3a"></button>
+                    <button style="background:#8ac926"></button>
+                    <button style="background:#1982c4"></button>
+                    <button style="background:#6a4c93"></button>
+                </div>
+            </div>
+
+
+            <div class="panel">
+                <div class="panelTitle">LAYERS</div>
+
+                <div class="layer selected">
+                    <span>👁</span>
+                    <span>Layer 1</span>
+                </div>
+
+                <button class="addLayer">+ Add A Layer</button>
+            </div>
+
+        </aside>
+
+    </main>
+
+
+    <section class="timeline">
+
+        <div class="timelineHeader">
+            <div class="timelineTitle">TIMELINE</div>
+
+            <div class="timelineControls">
+                <button onclick="previousFrame()">◀</button>
+                <button id="playButton" onclick="togglePlayback()">▶</button>
+                <button onclick="nextFrame()">▶</button>
+
+                <label>
+                    FPS
+                    <input type="number" id="fps" value="12" min="1" max="120">
+                </label>
+            </div>
+        </div>
+
+
+        <div class="timelineBody">
+
+            <div class="layersPanel">
+                <div class="layersHeader">
+                    <span>LAYERS</span>
+                    <button class="addLayerButton">+</button>
+                </div>
+
+                <div class="layerItem activeLayer">
+                    <span class="layerIcon">👁</span>
+                    <span class="layerName">Layer 1</span>
+                </div>
+
+                <div class="layerItem">
+                    <span class="layerIcon">👁</span>
+                    <span class="layerName">Layer 2</span>
+                </div>
+
+                <div class="layerItem">
+                    <span class="layerIcon">👁</span>
+                    <span class="layerName">Layer 3</span>
+                </div>
+            </div>
+
+
+            <div class="framesArea">
+                <div class="frameNumbers" id="frames"></div>
+            </div>
+
+        </div>
+
+    </section>
+
+</section>
+
+<script src="commands.js"></script>
+</body>
+</html>
